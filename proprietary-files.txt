@@ -650,7 +650,7 @@ etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
 framework/QtiTelephonyServicelibrary.jar|c2635709e7f9c57ff339dfd99f253ba0d4d9cc35
 framework/qcrilhook.jar
-framework/qti-telephony-common.jar|3095732632274738a978f8b26332c7e98f85f112
+framework/qti-telephony-common.jar|2EBA987AE297A892E895EC1E9A302B41DBE0232E
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
