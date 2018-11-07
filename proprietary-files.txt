@@ -646,8 +646,11 @@ vendor/lib/libsmemlog.so
 
 # RIL
 -app/QtiTelephonyService/QtiTelephonyService.apk
+-app/embms/embms.apk|4AE5826C7667D1A9B9E69EF69EA4ADEA6EEA9966
+etc/permissions/embms.xml|F407263ACA985DE32574B72836519DE88C913492
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
+framework/embmslibrary.jar|180D4D6B65D989023364457EB1BF6E1D45F7E274
 framework/QtiTelephonyServicelibrary.jar|c2635709e7f9c57ff339dfd99f253ba0d4d9cc35
 framework/qcrilhook.jar
 framework/qti-telephony-common.jar|2EBA987AE297A892E895EC1E9A302B41DBE0232E
