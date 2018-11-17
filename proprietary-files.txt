@@ -455,6 +455,14 @@ vendor/firmware/a530v2_seq.fw2
 vendor/firmware/a530v3_gpmu.fw2
 vendor/firmware/a530v3_seq.fw2
 
+# ESEPowermanager - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/bin/hw/vendor.qti.esepowermanager@1.0-service|D5ADE73DF5B0948FC0F6C29281E3CA3AF2B2536A
+vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc|A62AAFF78E2E253747684AB4CE46A346947C0657
+lib/vendor.qti.esepowermanager@1.0.so|E65AD704BB73308DDC7EABEEAF46B8D8A3F57F4C
+lib64/vendor.qti.esepowermanager@1.0.so|1662A45073EB48F9682975289BA87E314E6EDEC8
+vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so|A56027DC75C8C71E5C2163E674D5B14A732482F1
+vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so|6B4A3DF201146CE2510F38ADDD27E5A12FA7D107
+
 # IMS
 -app/ims/ims.apk|3806a916da8adc1e1787ec45a074a55968a0e752
 -app/uceShimService/uceShimService.apk
