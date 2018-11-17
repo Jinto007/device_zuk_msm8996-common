@@ -437,9 +437,9 @@ vendor/lib/libsdm-diag.so|e0455e9dd0e2378a3f770eb914aa11e612d594eb
 vendor/lib/libsdmextension.so|65efe8438a4b6634e7bdfc656fe72e4b8db30ec6
 vendor/lib/libtinyxml2_1.so|20fea724b7a9f94530833cfdc841049104a0ffa3
 
-# Graphics (Vulkan) - from marlin - PPR2.180905.006
-vendor/lib/hw/vulkan.msm8996.so|1e62d0727748c40269f7cb6b432bd03b56c7323d
-vendor/lib64/hw/vulkan.msm8996.so|1297229c8109c218737c9493b00a6904ce62c06b
+# Graphics (Vulkan) - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/lib/hw/vulkan.msm8996.so|1426694AC179DDD26D0DADF9CC54305CAD0386A4
+vendor/lib64/hw/vulkan.msm8996.so|82B72990A737799894C291F8A3515D7D668A5423
 
 # Graphics firmware
 vendor/firmware/a530_gpmu.fw2
