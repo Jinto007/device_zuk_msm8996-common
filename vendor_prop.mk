@@ -156,7 +156,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # USB
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.usb.controller=6a00000.dwc3 \
+<<<<<<< HEAD
     persist.sys.usb.config.extra=none
+=======
+    persist.vendor.usb.config.extra=none \
+    vendor.usb.dpl.inst.name=dpl \
+    vendor.usb.rmnet.func.name=rmnet_bam \
+    vendor.usb.rmnet.inst.name=rmnet \
+    vendor.usb.rndis.func.name=rndis_bam
+>>>>>>> 0e50080... msm8996-common: rootdir: Import init.msm.usb.configfs.rc from LA.UM.7.2.r1-05400-sdm660.0
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
