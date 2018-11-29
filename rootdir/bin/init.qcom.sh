@@ -53,15 +53,34 @@ fi
 
 cur_version_info=`cat /firmware/verinfo/ver_info.txt`
 if [ ! -f /firmware/verinfo/ver_info.txt -o "$prev_version_info" != "$cur_version_info" ]; then
-    # add W for group recursively before delete
-    chmod g+w -R /data/vendor/modem_config/*
-    rm -rf /data/vendor/modem_config/*
-    # preserve the read only mode for all subdir and files
-    cp --preserve=m -dr /firmware/image/modem_pr/mcfg/fancy_co/* /data/vendor/radio/modem_config
-    cp --preserve=m -d /firmware/verinfo/ver_info.txt /data/vendor/modem_config/
-    cp --preserve=m -d /firmware/image/modem_pr/mbn_ota.txt /data/vendor/modem_config/
-    # the group must be root, otherwise this script could not add "W" for group recursively
-    chown -hR radio.root /data/vendor/modem_config/*
+    rm -rf /data/vendor/radio/modem_config
+    mkdir /data/vendor/radio/modem_config
+    chmod 770 /data/vendor/radio/modem_config
+#[Begin][ZUKMT-164][renrm1][20171020] Modify default mbn location
+    #cp -r /firmware/image/modem_pr/mcfg/configs/* /data/vendor/radio/modem_config
+    cp -r /firmware/image/modem_pr/mcfg/fancy_co/* /data/vendor/radio/modem_config
+#[End][ZUKMT-164][renrm1][20171020] Modify default mbn location
+    chown -hR radio.radio /data/vendor/radio/modem_config
+    cp /firmware/verinfo/ver_info.txt /data/vendor/radio/ver_info.txt
+    chown radio.radio /data/vendor/radio/ver_info.txt
 fi
-chmod g-w /data/vendor/modem_config
-setprop ro.vendor.ril.mbn_copy_completed 1
+cp /firmware/image/modem_pr/mbn_ota.txt /data/vendor/radio/modem_config
+chown radio.radio /data/vendor/radio/modem_config/mbn_ota.txt
+echo 1 > /data/vendor/radio/copy_complete
+
+MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+MemTotal=${MemTotalStr:16:8}
+
+if [ $MemTotal -lt 5242880 ]; then
+    echo never > /sys/kernel/mm/transparent_hugepage/enabled
+    echo never > /sys/kernel/mm/transparent_hugepage/defrag
+else
+    echo madvise > /sys/kernel/mm/transparent_hugepage/enabled
+    echo madvise > /sys/kernel/mm/transparent_hugepage/defrag
+fi
+
+if [ $MemTotal -lt 3000000 ]; then
+   echo 1 > /sys/kernel/mm/ksm/run
+else
+   echo 0 > /sys/kernel/mm/ksm/run
+fi
